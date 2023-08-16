@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/project_final")
+mongoose.connect(process.env.DB_URL)
 mongoose.set("strictQuery", true);
 
 const database = mongoose.connection;

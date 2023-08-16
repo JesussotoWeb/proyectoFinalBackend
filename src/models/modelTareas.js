@@ -1,17 +1,14 @@
 const { Schema, model } = require("mongoose")
 
 const tareaModelo = new Schema({
-    nombre: {
+    nombreTask: {
         type: String
     },
     descripcion: {
         type: String
     },
-    fech_creacion: {
-        type: String
-    },
-    limite: {
-        type: String
+    fecha: {
+        type: Date
     }
 });
 

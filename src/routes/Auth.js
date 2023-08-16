@@ -2,13 +2,17 @@ const {Router} = require("express");
 const router = Router();
 
 
-const {getUser, registrarUser} = require("../controllers/LoginUser");
-
+const {getUser, registrarUser, sesionUser} = require("../controllers/LoginUser");
+const validateToken = require("../middlewares/ValidarToken.js")
 /* 
        /api/auth/
 */
 router.get('/users', getUser)
-router.post('/', registrarUser)
+router.post('/registrarUsuario', registrarUser)
+router.post('/login', sesionUser)
+router.get('/verificarToken', validateToken)
+
+
 /* router.put('/', registrarUser)
 router.delete('/', registrarUser) */
 
